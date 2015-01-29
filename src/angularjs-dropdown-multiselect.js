@@ -109,7 +109,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
                 $scope.searchFilter = $scope.searchFilter || '';
 
                 if (angular.isDefined($scope.settings.groupBy)) {
-                    $scope.$watch('options', function (newValue) {
+                    $scope.$watchCollection('options', function (newValue) {
                         if (angular.isDefined(newValue)) {
                             $scope.orderedItems = $filter('orderBy')(newValue, $scope.settings.groupBy);
                         }
